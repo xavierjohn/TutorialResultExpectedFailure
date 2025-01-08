@@ -12,7 +12,7 @@ ValidateName(args[0])
 .TapError(e => {
   ValidationError validationError = (ValidationError)e;
   foreach (ValidationError.FieldDetails detail in validationError.Errors)
-    Console.WriteLine(detail.Details[0]);
+    Console.WriteLine("Field `" + detail.Name + "`:" + detail.Details[0]);
 });
 
 
