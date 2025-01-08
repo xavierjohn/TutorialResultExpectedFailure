@@ -19,7 +19,7 @@ ValidateName(args[0])
 static Result<string> ValidateName(string? name)
 {
   if (string.IsNullOrWhiteSpace(name))
-    return Error.Validation("You did not enter a name.");
+    return Error.Validation("You did not enter a name.", nameof(name));
 
   return name;
 }
@@ -30,7 +30,7 @@ static Result<int> ValidateAge(string? age)
     || !int.TryParse(age, out int ageValue)
     || ageValue < 0)
   {
-    return Error.Validation("You did not enter a valid age.");
+    return Error.Validation("You did not enter a valid age.", nameof(age));
   }
 
   return ageValue;

@@ -1,0 +1,20 @@
+@WebValidation_HostAddress = http://localhost:5010
+
+# Success
+GET {{WebValidation_HostAddress}}/Hello/Xavier/32
+Accept: application/json
+
+###
+
+
+# Bad Age
+GET {{WebValidation_HostAddress}}/Hello/Xavier/age
+Accept: application/json
+
+###
+
+# Bad name & age
+GET {{WebValidation_HostAddress}}/Hello/%20/age
+Accept: application/json
+
+###
